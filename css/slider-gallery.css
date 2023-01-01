@@ -1,0 +1,109 @@
+/**
+ * Plugin criado por:
+ * Paulo Cezario
+ * https://github.com/phscezario
+ **/
+
+.my-slider-gallery {
+    position: relative;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.my-slider-gallery .container {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;    
+    scroll-snap-type: x mandatory;
+    font-size: 0; /* Resolve problema com white-space*/
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    transition: .2s;
+}
+.my-slider-gallery .container .item {
+    box-sizing: border-box;
+    font-size: 16px;
+    display: inline-block;
+    white-space: normal;
+    transition: .2s;
+    padding: 0;
+    height: 150px;
+
+}
+.my-slider-gallery .container .item img{
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.my-slider-gallery .slider {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    scroll-behavior: auto !important;
+}
+.my-slider-gallery .container .item:first-child {
+    margin-left:0;
+}
+.my-slider-gallery .container .item:last-child {
+    margin-right:0;
+}
+.my-slider-gallery .left, .my-slider-gallery .right{
+    position: absolute;
+    cursor: pointer;
+    background: rgba(20, 20, 20, .5);
+    color: #fff;
+    top: 0;
+    font: normal 100pt sans-serif;
+    transition: .2s;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */ 
+    opacity: 0;
+    
+    display: flex;
+    align-items: center;
+}
+.my-slider-gallery .left span, .my-slider-gallery .right span{
+    margin-top: -20px;
+}
+.my-slider-gallery .dots {
+    display: inline-block;
+}
+/*  Dots Style */
+.my-slider-gallery .dots div{
+    background: transparent;
+    border: 1px solid #ccc;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 5px;
+    border-radius: 10px;
+    transition: .2s;
+    cursor: pointer;
+}
+.my-slider-gallery .dots div:hover, .my-slider-gallery .dots div.active{
+    background: #ccc;
+    border: 1px solid transparent;
+}
+.my-slider-gallery:hover .left, .my-slider-gallery:hover .right, .my-slider-gallery .dots div{
+    opacity: 1;
+}
+.my-slider-gallery .left {
+    padding-right: 3px;
+    left: 0;
+}
+.my-slider-gallery .right{
+    padding-left: 3px;
+    right: 0;
+}
+.my-slider-gallery .left:hover, .my-slider-gallery .right:hover, .my-slider-gallery .dots div:hover{
+    opacity: .75;
+}
+@media only screen and (max-width: 600px) {
+    .my-slider-gallery .left, .my-slider-gallery .right {
+        display: none;
+    }
+}
